@@ -20,9 +20,9 @@ var ME = {
   photo:    "",          // image URL, or a data: URI for the offline file
   email:    "manish2020shah@gmail.com",
   phone:    "+977 9861360228",
-  github:   "",          // full https:// URL
-  linkedin: "",          // full https:// URL
-  orcid:    "",          // full https:// URL
+  github:   "https://github.com/manis2020shah-hub",
+  linkedin: "https://www.linkedin.com/in/manish-shah-14b238438/",
+  orcid:    "https://orcid.org/0009-0008-4432-6746",
   cv:       ""           // link to your CV PDF once it is online
 };
 

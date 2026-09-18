@@ -115,7 +115,95 @@ $("edu").innerHTML = EDU.map(function(e){
     + '<p class="det">' + f(e.detail, "grade and course highlights") + "</p></div></div>";
 }).join("");
 
-/* ---------------- contact ---------------- */
+/* ---------------- contact me ---------------- */
+var ICONS = {
+  github: '<svg viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path fill="currentColor" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>',
+  linkedin: '<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0zM7.12 20.45H3.55V9h3.57v11.45zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28z"/></svg>',
+  orcid: '<svg viewBox="0 0 256 256" aria-hidden="true" focusable="false"><path fill="currentColor" d="M256 128c0 70.7-57.3 128-128 128S0 198.7 0 128 57.3 0 128 0s128 57.3 128 128z"/><g fill="var(--card)"><path d="M86.3 186.2H70.9V79.1h15.4v107.1z"/><path d="M108.9 79.1h41.6c39.6 0 57 28.3 57 53.6 0 27.5-21.5 53.6-56.8 53.6h-41.8V79.1zm15.4 93.3h24.5c34.9 0 42.9-26.5 42.9-39.7 0-21.5-13.7-39.7-43.7-39.7h-23.7v79.4z"/><path d="M88.7 56.8a10.1 10.1 0 1 1-20.2 0 10.1 10.1 0 0 1 20.2 0z"/></g></svg>'
+};
+
+/* Profile links. Each renders only if its URL is filled in above in data.js. */
+var SOCIAL = [
+  { net: "github",   label: "GitHub",   url: ME.github,   note: "Code, Arduino sketches and analysis scripts" },
+  { net: "linkedin", label: "LinkedIn", url: ME.linkedin, note: "Career history, in full" },
+  { net: "orcid",    label: "ORCID iD", url: ME.orcid,    note: "Permanent author record" }
+].filter(function(x){ return has(x.url); });
+
+function socialRow(){
+  if (!SOCIAL.length) return "";
+  return '<div class="cta-social">' + SOCIAL.map(function(x){
+    var shown = x.url.replace(/^https?:\/\/(www\.)?/, "").replace(/\/$/, "");
+    return '<a class="soc" data-net="' + x.net + '" href="' + esc(x.url) + '"'
+      + ' target="_blank" rel="noopener" title="' + esc(shown) + '">'
+      + '<span class="soc-i">' + ICONS[x.net] + '</span>'
+      + '<span class="soc-t"><b>' + esc(x.label) + '</b><span>' + esc(x.note) + '</span></span>'
+      + '<span class="soc-go" aria-hidden="true">↗</span></a>';
+  }).join("") + "</div>";
+}
+
+var mailSubject = "Research enquiry — " + displayName;
+var mailBody = "Hello " + displayName.split(/\s+/)[0] + ",\n\n";
+
+if (has(ME.email)){
+  var addr = ME.email.trim();
+  var mailto = "mailto:" + addr
+    + "?subject=" + encodeURIComponent(mailSubject)
+    + "&body=" + encodeURIComponent(mailBody);
+  /* Gmail's own compose window, for anyone with no desktop mail client set up. */
+  var gmail = "https://mail.google.com/mail/?view=cm&fs=1&tf=1"
+    + "&to=" + encodeURIComponent(addr)
+    + "&su=" + encodeURIComponent(mailSubject)
+    + "&body=" + encodeURIComponent(mailBody);
+
+  $("cta").innerHTML =
+      '<div class="cta-card">'
+    +   '<p class="cta-k">Contact me</p>'
+    +   "<h3>Write to me directly &mdash; I answer every enquiry myself.</h3>"
+    +   '<a class="cta-mail" href="' + esc(mailto) + '">' + esc(addr) + "</a>"
+    +   '<div class="cta-acts">'
+    +     '<a class="btn pri" href="' + esc(mailto) + '">Email me</a>'
+    +     '<a class="btn" href="' + esc(gmail) + '" target="_blank" rel="noopener">Open in Gmail</a>'
+    +     '<button class="btn cta-copy" type="button" data-mail="' + esc(addr) + '">Copy address</button>'
+    +   "</div>"
+    +   socialRow()
+    +   '<p class="cta-note">' + esc(has(ME.location) ? ME.location : "Nepal")
+    +     " &middot; UTC+5:45 &middot; transcripts, full CV, referee details and any paper on request.</p>"
+    + "</div>";
+
+  var copyBtn = $("cta").querySelector(".cta-copy");
+  copyBtn.addEventListener("click", function(){
+    var self = this, text = self.getAttribute("data-mail");
+    var done = function(ok){
+      self.textContent = ok ? "Copied" : "Copy failed";
+      self.classList.toggle("is-done", ok);
+      setTimeout(function(){
+        self.textContent = "Copy address";
+        self.classList.remove("is-done");
+      }, 1800);
+    };
+    if (navigator.clipboard && navigator.clipboard.writeText){
+      navigator.clipboard.writeText(text).then(function(){ done(true); }, function(){ done(false); });
+      return;
+    }
+    var ta = document.createElement("textarea");
+    ta.value = text; ta.setAttribute("readonly", "");
+    ta.style.position = "fixed"; ta.style.opacity = "0";
+    document.body.appendChild(ta); ta.select();
+    var ok = false;
+    try { ok = document.execCommand("copy"); } catch(e){}
+    document.body.removeChild(ta);
+    done(ok);
+  });
+} else {
+  $("cta").innerHTML =
+      '<div class="cta-card">'
+    +   '<p class="cta-k">Contact me</p>'
+    +   "<h3>Write to me directly.</h3>"
+    +   '<span class="cta-mail is-blank">' + f("", "your email address") + "</span>"
+    +   socialRow()
+    + "</div>";
+}
+
 var C = [];
 C.push(has(ME.email)
   ? '<a href="mailto:' + esc(ME.email) + '"><span class="k">Email</span><span class="v">' + esc(ME.email) + "</span></a>"
@@ -129,7 +217,7 @@ C.push(has(ME.phone)
     : '<span class="cv"><span class="k">' + p[0] + '</span><span class="v">' + f("", "add link") + "</span></span>");
 });
 C.push('<span class="cv"><span class="k">References</span><span class="v">Two academic referees available on request.</span></span>');
-$("contact").innerHTML = C.join("");
+$("contact-grid").innerHTML = C.join("");
 
 $("foot").innerHTML = "© " + new Date().getFullYear() + " " + f(ME.name, "your name")
   + ". Built as a single page — no tracking, no analytics, nothing loaded from anywhere you did not ask for.";
