@@ -1,112 +1,151 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Three Papers, One Bench</title>
-<meta name="description" content="Research portfolio — green hydrogen electrolysis, green-synthesised nanomaterials, graphene gas sensors.">
+<title>Manish Shah — Physics · Green Hydrogen &amp; Nanomaterials</title>
+<meta name="description" content="Manish Shah — physics graduate working on green hydrogen by water electrolysis, green-synthesised copper nanomaterials and graphene gas sensors.">
+<script>(function(){try{var t=localStorage.getItem('portfolio-theme')||(window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light');document.documentElement.setAttribute('data-theme',t);}catch(e){}})();</script>
 <link rel="stylesheet" href="fonts.css">
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-
-<!-- <div class="draft" id="draft" hidden>
-  <div class="wrap">
-    <b>Draft &mdash; <span id="draftn">0</span> details still to fill.</b>
-    <span>Every amber marker below is a blank. Open this file in any text editor, fill in the <code>ME</code> block near the bottom, save, and reload.</span>
-  </div>
-</div> -->
-
-<nav class="top">
-  <div class="wrap">
-    <span class="me" id="nav-name"></span>
-    <a href="#research">Research</a>
-    <a href="#experience">Experience</a>
-    <a href="#techniques">Techniques</a>
-    <a href="#education">Education</a>
-    <a href="#contact">Contact</a>
-    <a id="nav-cv" href="#contact">CV</a>
-    <button id="theme" type="button" aria-pressed="false">Dark</button>
+<nav id="nav">
+  <div class="nav-inner">
+    <a class="nav-brand" href="#top" id="nav-name"></a>
+    <div class="nav-links">
+      <a href="#research" class="hide-sm">Research</a>
+      <a href="#thesis" class="hide-sm">Thesis</a>
+      <a href="#experience" class="hide-sm">Experience</a>
+      <a href="#techniques" class="hide-sm">Techniques</a>
+      <a href="#education" class="hide-sm">Education</a>
+      <a href="#contact" class="hide-sm">Contact</a>
+      <a href="#contact" class="hide-sm" id="nav-gh" hidden>GitHub</a>
+      <button class="theme-toggle" id="themeToggle" type="button" aria-label="Toggle dark mode">☾ Dark</button>
+      <a class="nav-cta" id="nav-cv" target="_blank" href="https://drive.google.com/file/d/1vfIyBbURH8cEyYuD21wc7udu_YrPMqjG/view?usp=sharing">CV ↓</a>
+    </div>
   </div>
 </nav>
 
-<header class="hero">
-  <div class="wrap">
-    <div>
-      <h1 id="hero-name"></h1>
-      <p class="role" id="hero-role"></p>
-      <p class="status"><i></i><span id="hero-status"></span></p>
-      <div class="acts" id="hero-acts"></div>
+<header class="hero" id="top">
+  <svg class="fieldlines" viewBox="0 0 1440 760" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+    <defs>
+      <path id="wave" d="M -80 380 C 160 300 340 300 520 368 C 700 436 880 460 1060 396 C 1240 332 1360 348 1520 380"></path>
+    </defs>
+    <g class="wave-drift">
+      <use href="#wave" class="line" y="-330"></use>
+      <use href="#wave" class="line" y="-275"></use>
+      <use href="#wave" class="line" y="-220"></use>
+      <use href="#wave" class="line" y="-165"></use>
+      <use href="#wave" class="line" y="-110"></use>
+      <use href="#wave" class="line" y="-55"></use>
+      <use href="#wave" class="index" y="0"></use>
+      <use href="#wave" class="line" y="55"></use>
+      <use href="#wave" class="line" y="110"></use>
+      <use href="#wave" class="line" y="165"></use>
+      <use href="#wave" class="line" y="220"></use>
+      <use href="#wave" class="line" y="275"></use>
+      <use href="#wave" class="line" y="330"></use>
+    </g>
+  </svg>
+  <div class="hero-inner reveal in">
+    <div class="hero-grid">
+      <div>
+        <p class="hero-coord" id="hero-coord"></p>
+        <p class="availability"><span class="dot"></span><span id="hero-status"></span></p>
+        <h1 id="hero-name"></h1>
+        <p class="role"><span id="hero-role"></span></p>
+        <p class="pitch" id="hero-pitch"></p>
+        <div class="hero-actions" id="hero-acts"></div>
+      </div>
+      <div class="hero-portrait" id="portrait"></div>
     </div>
-    <div class="portrait" id="portrait"></div>
   </div>
 </header>
 
 <main>
 
-<section id="profile">
-  <div class="wrap">
-    <div class="shead"><h2>Profile</h2><span class="lab" id="loc"></span></div>
-    <p class="prose">I am a physics graduate working at the experimental end of energy materials, and a researcher at <b>Innovation Ghar Nepal</b> since February 2023. My work runs from <b>green hydrogen production by water electrolysis</b>,  <b>green synthesis of copper nanoparticles from waste materials</b>, to <b>graphene synthesis and gas-sensor fabrication</b>.</p>
-    <p class="prose">The common thread is the measurement itself: building the cell or the sensor, isolating one variable, and reporting what the instrument actually showed. A physics training is what makes that transferable &mdash; the electrochemistry, the nanomaterials and the sensing are different subjects, but they are the same discipline of controlled measurement.</p>
-    <p class="prose">Alongside the bench work I model and draw what I build &mdash; AutoCAD, SOLIDWORKS and CATIA &mdash; and I instrument it with Arduino data loggers I write myself. I am looking for a group where that combination is useful: electrolyzer and electrocatalysis work first, oxide nanomaterials second.</p>
-  </div>
-</section>
+  <section id="work" class="highlights">
+    <div class="wrap">
+      <p class="eyebrow reveal">Selected work</p>
+      <div class="hl-grid" id="highlights"></div>
+    </div>
+  </section>
 
-<section id="research">
-  <div class="wrap">
-    <div class="shead"><h2>Research</h2><span class="lab">three papers &middot; three identities</span></div>
-    <p class="intro">Each is colour-coded the same way throughout my application materials. The order is deliberate: the hydrogen work is the strongest fit for an experimental physics background, and it leads.</p>
-    <div class="works" id="works"></div>
+  <section id="about">
+    <div class="wrap">
+      <p class="eyebrow reveal">Profile</p>
+      <div class="about-grid">
+        <div class="about-lead reveal" id="about-lead"></div>
+        <div class="facts reveal" id="facts"></div>
+      </div>
+    </div>
+  </section>
 
-    <h3 class="subhead">Further project work</h3>
-    <div class="minis" id="minis"></div>
-  </div>
-</section>
+  <section id="research">
+    <div class="wrap">
+      <p class="eyebrow reveal">Research &amp; projects</p>
+      <h2 class="section-title reveal">Three papers, one bench.</h2>
+      <div id="works"></div>
 
-<section id="experience">
-  <div class="wrap">
-    <div class="shead"><h2>Experience</h2></div>
-    <div class="edu" id="jobs"></div>
-  </div>
-</section>
+      <p class="eyebrow reveal" style="margin-top:56px">Further project work</p>
+      <div class="hl-grid" id="minis"></div>
+    </div>
+  </section>
 
-<section id="techniques">
-  <div class="wrap">
-    <div class="shead"><h2>Techniques &amp; instrumentation</h2><span class="lab">what I can do on day one</span></div>
-    <p class="intro">Grouped by what the work actually requires. Everything listed here is something I have personally built, run or written.</p>
-    <div class="skills" id="skills"></div>
+  <section id="thesis">
+    <div class="wrap">
+      <p class="eyebrow reveal">Final-year thesis</p>
+      <div class="about-grid">
+        <div class="reveal" id="thesis-lead"></div>
+        <div class="facts reveal" id="thesis-facts"></div>
+      </div>
+      <div id="thesis-findings"></div>
+    </div>
+  </section>
 
-    <h3 class="subhead">Training</h3>
-    <div class="training" id="training"></div>
-  </div>
-</section>
+  <section id="experience">
+    <div class="wrap">
+      <p class="eyebrow reveal">Experience</p>
+      <h2 class="section-title reveal">Where the work has been done.</h2>
+      <div id="jobs"></div>
+    </div>
+  </section>
 
-<section id="education">
-  <div class="wrap">
-    <div class="shead"><h2>Education</h2></div>
-    <div class="edu" id="edu"></div>
-  </div>
-</section>
+  <section id="techniques">
+    <div class="wrap">
+      <p class="eyebrow reveal">Capabilities</p>
+      <h2 class="section-title reveal">Everything here is something I have built, run or written.</h2>
+      <div id="skills"></div>
 
-<section id="contact">
-  <div class="wrap">
-    <div class="shead"><h2>Contact me</h2><span class="lab">replies within a day</span></div>
-    <p class="intro">If you are a principal investigator considering me for a funded place, the fastest route is email &mdash; I will send transcripts, the full CV, referee details and any paper on request.</p>
-    <div class="cta" id="cta"></div>
-    <div class="contact" id="contact-grid"></div>
-  </div>
-</section>
+      <p class="eyebrow reveal" style="margin-top:56px">Training</p>
+      <div id="training"></div>
+    </div>
+  </section>
+
+  <section id="education">
+    <div class="wrap">
+      <p class="eyebrow reveal">Education</p>
+      <div id="edu"></div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="wrap">
+      <p class="eyebrow reveal">Get in touch</p>
+      <div class="reveal" id="contact-block"></div>
+    </div>
+  </section>
 
 </main>
 
 <footer>
-  <div class="wrap">
-    <p id="foot"></p>
+  <div class="wrap foot-inner">
+    <p id="foot"></p><a>© 2026 Manish Shah.</a>
+    <a href="#top">Back to top ↑</a>
   </div>
 </footer>
-
 
 <script src="data.js"></script>
 <script src="app.js"></script>

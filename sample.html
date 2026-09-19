@@ -1,0 +1,766 @@
+<html lang="en" data-theme="light" data-qb-installed="true"><head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ayush Karki — Civil Engineering · Water Resources &amp; Geospatial ML</title>
+<meta name="description" content="Ayush Karki — civil engineer working across water resources, hydrology, hydraulics, remote sensing and applied machine learning.">
+<script>(function(){try{var t=localStorage.getItem('theme')||(window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light');document.documentElement.setAttribute('data-theme',t);}catch(e){}})();</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&amp;family=IBM+Plex+Sans:wght@400;500;600&amp;family=IBM+Plex+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #14212B;
+    --ink-soft: #4A5C64;
+    --muted: #7E8D92;
+    --paper: #F6F7F4;
+    --raise: #FFFFFF;
+    --line: #D3DAD7;
+    --accent: #0E7C86;
+    --accent-deep: #0A5A61;
+    --nav-bg: rgba(246,247,244,0.82);
+    --maxw: 1060px;
+    --display: "Space Grotesk", sans-serif;
+    --body: "IBM Plex Sans", sans-serif;
+    --mono: "IBM Plex Mono", monospace;
+  }
+
+  html[data-theme="dark"] {
+    --ink: #E7ECEA;
+    --ink-soft: #AEBAB8;
+    --muted: #7F8D8B;
+    --paper: #171B1E;
+    --raise: #1E262B;
+    --line: #2C383F;
+    --accent: #2BB3BD;
+    --accent-deep: #74D4DB;
+    --nav-bg: rgba(23,27,30,0.82);
+  }
+
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--body);
+    font-size: 16px;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    transition: background .35s ease, color .35s ease;
+  }
+
+  a { color: inherit; }
+  ::selection { background: rgba(14,124,134,0.18); }
+
+  .wrap { max-width: var(--maxw); margin: 0 auto; padding: 0 28px; }
+
+  /* ---------- eyebrow / section scaffolding ---------- */
+  .eyebrow {
+    font-family: var(--mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--accent);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin: 0 0 22px;
+  }
+  .eyebrow::before {
+    content: "";
+    width: 26px;
+    height: 1px;
+    background: var(--accent);
+    display: inline-block;
+  }
+
+  section { padding: 92px 0; border-top: 1px solid var(--line); }
+  h2.section-title {
+    font-family: var(--display);
+    font-weight: 500;
+    font-size: clamp(1.5rem, 3vw, 2.05rem);
+    letter-spacing: -0.02em;
+    margin: 0 0 34px;
+    line-height: 1.15;
+  }
+
+  /* ---------- nav ---------- */
+  nav {
+    position: sticky; top: 0; z-index: 50;
+    background: var(--nav-bg);
+    backdrop-filter: saturate(140%) blur(9px);
+    border-bottom: 1px solid transparent;
+    transition: border-color .3s ease, background .35s ease;
+  }
+  nav.scrolled { border-bottom-color: var(--line); }
+  .nav-inner {
+    max-width: var(--maxw); margin: 0 auto; padding: 15px 28px;
+    display: flex; align-items: center; justify-content: space-between; gap: 20px;
+  }
+  .nav-brand {
+    font-family: var(--display); font-weight: 600; font-size: 0.98rem;
+    letter-spacing: -0.01em; text-decoration: none;
+  }
+  .nav-brand span { color: var(--accent); }
+  .nav-links { display: flex; gap: 26px; align-items: center; }
+  .nav-links a {
+    font-family: var(--mono); font-size: 0.76rem; letter-spacing: 0.06em;
+    text-transform: uppercase; text-decoration: none; color: var(--ink-soft);
+    transition: color .2s ease;
+  }
+  .nav-links a:hover { color: var(--accent); }
+  .theme-toggle {
+    font-family: var(--mono); font-size: 0.72rem; letter-spacing: 0.06em;
+    text-transform: uppercase; color: var(--ink-soft); background: transparent;
+    border: 1px solid var(--line); border-radius: 2px; padding: 6px 10px;
+    cursor: pointer; transition: color .2s ease, border-color .2s ease;
+  }
+  .theme-toggle:hover { color: var(--accent); border-color: var(--accent); }
+  .nav-links a.nav-cta {
+    font-family: var(--mono); font-size: 0.76rem; letter-spacing: 0.04em;
+    text-decoration: none; color: #ffffff; background: var(--ink);
+    padding: 8px 15px; border-radius: 2px; border: 1px solid transparent;
+    transition: background .2s ease, color .35s ease;
+  }
+  .nav-links a.nav-cta:hover { background: var(--accent-deep); color: #ffffff; }
+  /* dark mode: match the CV button to the hero "Email me" ghost style (unchanged) */
+  html[data-theme="dark"] .nav-links a.nav-cta { background: transparent; color: var(--ink); border-color: var(--line); }
+  html[data-theme="dark"] .nav-links a.nav-cta:hover { background: var(--accent-deep); color: var(--paper); border-color: var(--accent-deep); }
+  @media (max-width: 720px) { .nav-links .hide-sm { display: none; } }
+
+  /* ---------- hero ---------- */
+  .hero { position: relative; overflow: hidden; border-top: none; padding: 0; }
+  .hero-inner {
+    max-width: var(--maxw); margin: 0 auto; padding: 118px 28px 104px;
+    position: relative; z-index: 2;
+  }
+  .contours {
+    position: absolute; inset: 0; width: 100%; height: 100%;
+    z-index: 1; pointer-events: none;
+  }
+  .contours use { fill: none; }
+  .contours .line { fill: none; stroke: var(--line); stroke-width: 1.15; opacity: 0.55; }
+  .contours .index { fill: none; stroke: var(--accent); stroke-width: 1.7; opacity: 0.85; }
+  .contour-drift { animation: drift 16s ease-in-out infinite alternate; transform-origin: center; }
+  @keyframes drift { from { transform: translateY(-7px); } to { transform: translateY(7px); } }
+
+  .hero-coord {
+    font-family: var(--mono); font-size: 0.74rem; letter-spacing: 0.14em;
+    color: var(--muted); text-transform: uppercase; margin: 0 0 18px;
+  }
+  .availability {
+    display: inline-flex; align-items: center; gap: 9px; font-family: var(--mono);
+    font-size: 0.74rem; letter-spacing: 0.06em; text-transform: uppercase;
+    color: var(--accent-deep); background: rgba(14,124,134,0.10);
+    border: 1px solid var(--line); border-radius: 999px; padding: 6px 14px; margin: 0 0 24px;
+  }
+  .availability .dot {
+    width: 8px; height: 8px; border-radius: 50%; background: #1B9E4B;
+    box-shadow: 0 0 0 3px rgba(27,158,75,0.18); flex: none;
+  }
+  .hero h1 {
+    font-family: var(--display); font-weight: 600;
+    font-size: clamp(2.7rem, 7.4vw, 5rem); line-height: 0.98;
+    letter-spacing: -0.03em; margin: 0 0 20px;
+  }
+  .hero .role {
+    font-family: var(--mono); font-size: clamp(0.82rem, 1.7vw, 0.95rem);
+    letter-spacing: 0.04em; color: #3d686b; margin: 0 0 30px;
+    max-width: 42ch; line-height: 1.7;
+  }
+  html[data-theme="dark"] .hero .role { color: var(--accent-deep); }
+  /* light mode: user's fine-tuned buffer values; dark mode: keep the accent glow */
+  .hero .role span { text-shadow: 0 0 1.5px #696969, 0 0 0.1px #f5feff; }
+  html[data-theme="dark"] .hero .role span { text-shadow: 0 0 8px var(--accent), 0 0 16px var(--accent); }
+  .hero .thesis {
+    font-size: clamp(1.12rem, 2.4vw, 1.5rem); line-height: 1.42;
+    max-width: 34ch; color: var(--ink); font-weight: 400; margin: 0 0 40px;
+  }
+  .hero .thesis em { font-style: normal; color: var(--accent-deep); border-bottom: 1.5px solid rgba(14,124,134,0.35); }
+  .hero-actions { display: flex; flex-wrap: wrap; gap: 14px; align-items: center; }
+  .btn {
+    font-family: var(--mono); font-size: 0.8rem; letter-spacing: 0.04em;
+    text-decoration: none; padding: 12px 20px; border-radius: 2px;
+    display: inline-flex; align-items: center; gap: 9px; transition: all .2s ease;
+  }
+  .btn-solid { background: var(--ink); color: var(--paper); }
+  .btn-solid:hover { background: var(--accent-deep); transform: translateY(-1px); }
+  .btn-ghost { border: 1px solid var(--line); color: var(--ink); }
+  .btn-ghost:hover { border-color: var(--accent); color: var(--accent-deep); }
+  .btn svg { width: 15px; height: 15px; }
+
+  /* ---------- hero portrait ---------- */
+  .hero-grid { display: grid; grid-template-columns: 1fr auto; gap: 56px; align-items: center; }
+  .hero-portrait {
+    width: 232px; height: 288px; object-fit: cover; object-position: center top;
+    border-radius: 6px; border: 1px solid var(--line);
+    box-shadow: 0 18px 44px -22px rgba(20,33,43,0.5);
+    background: var(--raise); flex: none;
+  }
+  html[data-theme="dark"] .hero-portrait { box-shadow: 0 18px 44px -22px rgba(0,0,0,0.7); }
+  @media (max-width: 860px) {
+    .hero-grid { grid-template-columns: 1fr; gap: 32px; }
+    .hero-portrait { order: -1; width: 148px; height: 184px; }
+  }
+
+  /* ---------- selected work highlights ---------- */
+  .highlights { padding-top: 78px; padding-bottom: 78px; }
+  .hl-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+  @media (max-width: 800px) { .hl-grid { grid-template-columns: 1fr; } }
+  .hl-card {
+    display: flex; flex-direction: column; background: var(--raise);
+    border: 1px solid var(--line); border-radius: 4px; padding: 24px 24px 22px;
+    text-decoration: none; color: inherit; transition: border-color .2s ease, transform .2s ease, box-shadow .2s ease;
+  }
+  .hl-card:hover { border-color: var(--accent); transform: translateY(-2px); box-shadow: 0 16px 32px -24px rgba(20,33,43,0.5); }
+  .hl-card .hl-kicker {
+    font-family: var(--mono); font-size: 0.66rem; letter-spacing: 0.14em; text-transform: uppercase;
+    color: var(--accent); margin: 0 0 12px;
+  }
+  .hl-card h3 { font-family: var(--display); font-weight: 500; font-size: 1.06rem; line-height: 1.3; letter-spacing: -0.01em; margin: 0 0 10px; }
+  .hl-card p { color: var(--ink-soft); font-size: 0.9rem; line-height: 1.5; margin: 0 0 16px; }
+  .hl-card .hl-go { margin-top: auto; font-family: var(--mono); font-size: 0.72rem; letter-spacing: 0.04em; color: var(--accent); }
+
+  /* ---------- reveal ---------- */
+  .reveal { opacity: 0; transform: translateY(18px); transition: opacity .7s ease, transform .7s ease; }
+  .reveal.in { opacity: 1; transform: none; }
+  @media (prefers-reduced-motion: reduce) {
+    .reveal { opacity: 1; transform: none; transition: none; }
+    .contour-drift { animation: none; }
+    .btn:hover { transform: none; }
+  }
+
+  /* ---------- about ---------- */
+  .about-grid { display: grid; grid-template-columns: 1.4fr 1fr; gap: 54px; align-items: start; }
+  .about-lead { font-size: 1.16rem; line-height: 1.55; color: var(--ink); }
+  .about-lead strong { font-weight: 600; }
+  .facts { border-left: 2px solid var(--accent); padding-left: 22px; }
+  .fact { margin-bottom: 20px; }
+  .fact:last-child { margin-bottom: 0; }
+  .fact .k { font-family: var(--mono); font-size: 0.7rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--muted); display: block; margin-bottom: 3px; }
+  .fact .v { font-size: 0.98rem; color: var(--ink); }
+  @media (max-width: 760px) { .about-grid { grid-template-columns: 1fr; gap: 34px; } }
+
+  /* ---------- research cards ---------- */
+  .card {
+    background: var(--raise); border: 1px solid var(--line); border-radius: 4px;
+    padding: 34px 34px 30px; margin-bottom: 22px; position: relative;
+  }
+  .card::before {
+    content: ""; position: absolute; left: 0; top: 22px; bottom: 22px; width: 3px;
+    background: var(--accent); border-radius: 3px;
+  }
+  .card-top { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; margin-bottom: 16px; }
+  .tag {
+    font-family: var(--mono); font-size: 0.68rem; letter-spacing: 0.12em; text-transform: uppercase;
+    padding: 4px 10px; border-radius: 2px;
+  }
+  .tag-live { background: rgba(14,124,134,0.12); color: var(--accent-deep); }
+  .tag-role { border: 1px solid var(--line); color: var(--ink-soft); }
+  .card h3 {
+    font-family: var(--display); font-weight: 500; font-size: 1.28rem; line-height: 1.3;
+    letter-spacing: -0.015em; margin: 0 0 6px;
+  }
+  .card .venue { font-family: var(--mono); font-size: 0.78rem; color: var(--muted); margin: 0 0 12px; letter-spacing: 0.03em; }
+  .card .summary { color: var(--ink-soft); margin: 0 0 22px; }
+  .card .summary strong { color: var(--ink); font-weight: 600; }
+  .preprint-link {
+    display: inline-flex; align-items: center; gap: 7px; font-family: var(--mono);
+    font-size: 0.76rem; letter-spacing: 0.03em; color: var(--accent);
+    text-decoration: none; margin: 0 0 22px; border-bottom: 1px solid transparent;
+    transition: border-color .2s ease;
+  }
+  .preprint-link:hover { border-bottom-color: var(--accent); }
+
+  .method-label {
+    font-family: var(--mono); font-size: 0.7rem; letter-spacing: 0.16em; text-transform: uppercase;
+    color: var(--muted); margin: 0 0 12px;
+  }
+  .method { list-style: none; margin: 0; padding: 0; }
+  .method li { position: relative; padding-left: 22px; margin-bottom: 11px; color: var(--ink-soft); font-size: 0.95rem; line-height: 1.5; }
+  .method li:last-child { margin-bottom: 0; }
+  .method li::before {
+    content: ""; position: absolute; left: 0; top: 0.62em; width: 8px; height: 8px;
+    border: 1.5px solid var(--accent); border-radius: 50%;
+  }
+  .method li strong { color: var(--ink); font-weight: 600; }
+
+  /* ---------- thesis title link ---------- */
+  .thesis-title-link { color: inherit; text-decoration: none; display: inline; }
+  .thesis-title-link .pdf-tag {
+    font-family: var(--mono); font-size: 0.6rem; letter-spacing: 0.12em; text-transform: uppercase;
+    color: var(--accent); border: 1px solid var(--line); border-radius: 2px; padding: 3px 7px;
+    opacity: 0.6; transition: opacity .2s ease, border-color .2s ease; white-space: nowrap;
+    vertical-align: middle; margin-left: 10px;
+  }
+  .thesis-title-link:hover { color: var(--accent-deep); }
+  .thesis-title-link:hover .pdf-tag { opacity: 1; border-color: var(--accent); }
+
+  /* ---------- skills ---------- */
+  .skill-group { margin-bottom: 40px; }
+  .skill-group:last-child { margin-bottom: 0; }
+  .skill-group > .grp {
+    font-family: var(--display); font-weight: 500; font-size: 1.06rem; letter-spacing: -0.01em;
+    margin: 0 0 4px; display: flex; align-items: baseline; gap: 12px;
+  }
+  .skill-group > .grp .num { font-family: var(--mono); font-size: 0.72rem; color: var(--accent); letter-spacing: 0.1em; }
+  .skill-list { border-top: 1px solid var(--line); margin-top: 16px; }
+  .skill-row {
+    display: grid; grid-template-columns: 210px 1fr; gap: 22px;
+    padding: 13px 0; border-bottom: 1px solid var(--line); align-items: baseline;
+  }
+  .skill-row .name { font-family: var(--mono); font-size: 0.86rem; color: var(--ink); letter-spacing: 0.01em; }
+  .skill-row .desc { color: var(--ink-soft); font-size: 0.94rem; line-height: 1.5; }
+  @media (max-width: 640px) {
+    .skill-row { grid-template-columns: 1fr; gap: 4px; padding: 12px 0; }
+    .skill-row .name { color: var(--accent-deep); }
+  }
+
+  /* ---------- education ---------- */
+  .edu { display: grid; grid-template-columns: 150px 1fr; gap: 30px; align-items: start; margin-bottom: 34px; }
+  .edu:last-child { margin-bottom: 0; }
+  .edu .when { font-family: var(--mono); font-size: 0.82rem; color: var(--muted); letter-spacing: 0.04em; padding-top: 3px; }
+  .edu h3 { font-family: var(--display); font-weight: 500; font-size: 1.22rem; margin: 0 0 4px; letter-spacing: -0.01em; }
+  .edu .inst { color: var(--ink-soft); margin: 0 0 16px; }
+  .coursework { display: flex; flex-wrap: wrap; gap: 8px; }
+  .chip {
+    font-family: var(--mono); font-size: 0.74rem; letter-spacing: 0.02em;
+    padding: 5px 11px; border: 1px solid var(--line); border-radius: 2px; color: var(--ink-soft);
+  }
+  @media (max-width: 640px) { .edu { grid-template-columns: 1fr; gap: 8px; } }
+  .show-all {
+    display: inline-flex; align-items: center; gap: 8px; margin-top: 16px;
+    font-family: var(--mono); font-size: 0.75rem; letter-spacing: 0.04em;
+    color: var(--accent); text-decoration: none;
+    border: 1px solid var(--line); border-radius: 2px; padding: 8px 14px;
+    transition: border-color .2s ease, color .2s ease, background .2s ease;
+  }
+  .show-all:hover { border-color: var(--accent); color: var(--accent-deep); background: rgba(14,124,134,0.06); }
+  .show-all svg { width: 14px; height: 14px; }
+
+  /* ---------- contact / footer ---------- */
+  .contact-flex { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 40px; align-items: flex-end; }
+  .contact-big {
+    font-family: var(--display); font-weight: 500; font-size: clamp(1.4rem, 4vw, 2.4rem);
+    letter-spacing: -0.02em; text-decoration: none; line-height: 1.1;
+  }
+  .contact-big:hover { color: var(--accent-deep); }
+  .contact-meta { font-family: var(--mono); font-size: 0.82rem; color: var(--muted); line-height: 1.9; letter-spacing: 0.02em; }
+  .contact-meta a { text-decoration: none; }
+  .contact-meta a:hover { color: var(--accent); }
+  footer { border-top: 1px solid var(--line); padding: 26px 0 40px; }
+  .foot-inner { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; align-items: center; }
+  .foot-inner p { font-family: var(--mono); font-size: 0.72rem; color: var(--muted); letter-spacing: 0.05em; margin: 0; }
+  .foot-inner a { font-family: var(--mono); font-size: 0.72rem; color: var(--muted); letter-spacing: 0.05em; text-decoration: none; }
+  .foot-inner a:hover { color: var(--accent); }
+</style>
+</head>
+<body data-new-gr-c-s-check-loaded="14.1330.0" data-gr-ext-installed="">
+
+<nav id="nav" class="scrolled">
+  <div class="nav-inner">
+    <a class="nav-brand" href="#top">Ayush Karki<span>.</span></a>
+    <div class="nav-links">
+      <a href="#research" class="hide-sm">Research</a>
+      <a href="#thesis" class="hide-sm">Thesis</a>
+      <a href="#skills" class="hide-sm">Skills</a>
+      <a href="#education" class="hide-sm">Education</a>
+      <a href="https://github.com/ayushkarkiofficial-lgtm" target="_blank" rel="noopener" class="hide-sm">GitHub ↗</a>
+      <button class="theme-toggle" id="themeToggle" type="button" aria-label="Toggle dark mode">☾ Dark</button>
+      <a class="nav-cta" href="Ayush_Karki_Academic_CV.pdf" target="_blank" rel="noopener">CV ↓</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <svg class="contours" viewBox="0 0 1440 760" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+    <defs>
+      <path id="ridge" d="M -80 380 C 180 316 360 316 540 372 C 720 428 900 452 1080 398 C 1260 344 1380 356 1520 380"></path>
+    </defs>
+    <g class="contour-drift">
+      <use href="#ridge" class="line" y="-330"></use>
+      <use href="#ridge" class="line" y="-275"></use>
+      <use href="#ridge" class="line" y="-220"></use>
+      <use href="#ridge" class="line" y="-165"></use>
+      <use href="#ridge" class="line" y="-110"></use>
+      <use href="#ridge" class="line" y="-55"></use>
+      <use href="#ridge" class="index" y="0"></use>
+      <use href="#ridge" class="line" y="55"></use>
+      <use href="#ridge" class="line" y="110"></use>
+      <use href="#ridge" class="line" y="165"></use>
+      <use href="#ridge" class="line" y="220"></use>
+      <use href="#ridge" class="line" y="275"></use>
+      <use href="#ridge" class="line" y="330"></use>
+    </g>
+  </svg>
+  <div class="hero-inner reveal in">
+   <div class="hero-grid">
+    <div>
+      <p class="hero-coord">27.7172° N · 85.3240° E — Kathmandu, Nepal</p>
+      <p class="availability"><span class="dot"></span>Seeking a funded MSc / PhD research assistantship · Spring / Fall 2027</p>
+      <h1>Ayush<br>Karki</h1>
+      <p class="role"><span>Civil Engineering graduate · Hydrology &amp; Hydraulics · Python &amp; Machine Learning as applied techniques</span></p>
+      <p class="thesis">My major interest is in <em>hydrology and hydraulics</em> — how water moves through catchments, rivers and hydraulic structures. I use Python, machine learning and remote sensing as applied techniques to study these problems, especially where data is scarce and a model needs to stay honest about its own uncertainty. I'm hoping to join a research group as an assistant, contribute to this kind of work, and keep learning from people who do it well.</p>
+      <div class="hero-actions">
+        <a class="btn btn-solid" href="Ayush_Karki_Academic_CV.pdf" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v13m0 0l-4-4m4 4l4-4M5 21h14"></path></svg>
+          Download CV
+        </a>
+        <a class="btn btn-ghost" href="https://github.com/ayushkarkiofficial-lgtm" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5a12 12 0 00-3.79 23.4c.6.11.82-.26.82-.58l-.01-2.02c-3.34.72-4.04-1.61-4.04-1.61-.55-1.39-1.34-1.76-1.34-1.76-1.09-.75.08-.73.08-.73 1.2.08 1.84 1.24 1.84 1.24 1.07 1.83 2.81 1.3 3.5.99.11-.78.42-1.3.76-1.6-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.13-.3-.54-1.52.11-3.18 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 016 0c2.29-1.55 3.3-1.23 3.3-1.23.65 1.66.24 2.88.12 3.18.77.84 1.23 1.91 1.23 3.22 0 4.61-2.8 5.63-5.48 5.92.43.37.81 1.1.81 2.22l-.01 3.29c0 .32.22.7.83.58A12 12 0 0012 .5z"></path></svg>
+          GitHub
+        </a>
+        <a class="btn btn-ghost" href="mailto:ayushkarki.official@gmail.com">Email me</a>
+      </div>
+    </div>
+    <img class="hero-portrait" src="ayush-karki.jpg" alt="Portrait of Ayush Karki" width="232" height="288" loading="eager">
+   </div>
+  </div>
+</header>
+
+<main>
+  <section id="work" class="highlights">
+    <div class="wrap">
+      <p class="eyebrow reveal in">Selected work</p>
+      <div class="hl-grid">
+        <a class="hl-card reveal in" href="#research">
+          <p class="hl-kicker">Under review · Georisk · First author</p>
+          <h3>Landslide Susceptibility Mapping with a Reliability Layer</h3>
+          <p>An ML susceptibility map for the Karnali Highway corridor, paired with an applicability-domain layer that flags where the model should not be trusted.</p>
+          <span class="hl-go">Read more ↓</span>
+        </a>
+        <a class="hl-card reveal in" href="#research">
+          <p class="hl-kicker">Personal project</p>
+          <h3>A Reliability-Aware ML Surrogate for EPA-SWMM</h3>
+          <p>A machine-learning surrogate that approximates SWMM stormwater outputs far faster, with the same reliability layer to flag out-of-distribution inputs.</p>
+          <span class="hl-go">Read more ↓</span>
+        </a>
+        <a class="hl-card reveal in" href="#research">
+          <p class="hl-kicker">Personal project · ongoing</p>
+          <h3>GR4J Rainfall-Runoff Model with Particle-Swarm Calibration</h3>
+          <p>A conceptual daily rainfall-runoff model built from its equations and calibrated by a from-scratch particle-swarm optimizer, reaching KGE ≈ 0.88 on a monsoon-analogue catchment.</p>
+          <span class="hl-go">Read more ↓</span>
+        </a>
+        <a class="hl-card reveal in" href="#thesis">
+          <p class="hl-kicker">Final-year thesis</p>
+          <h3>Pre-Feasibility Study of the Manohara Irrigation Project</h3>
+          <p>A full hydrology-to-hydraulic-design workup for an irrigation scheme, from monthly flows and the 100-year flood to intake and canal design.</p>
+          <span class="hl-go">Read more ↓</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="wrap">
+      <p class="eyebrow reveal in">Profile</p>
+      <div class="about-grid">
+        <p class="about-lead reveal in">
+          I'm a <strong>Civil Engineering graduate</strong> from Pulchowk Campus, IOE, Tribhuvan University. My major interest
+          is in <strong>hydrology and hydraulics</strong> — the movement of water through catchments, rivers and hydraulic
+          structures. To study these problems I apply <strong>Python and machine learning</strong>, along with remote sensing,
+          as practical tools. I'm drawn to work where physical understanding and data-driven methods meet: models that are not
+          only accurate but honest about their own uncertainty, and that hold up in the data-sparse conditions common to
+          real-world engineering.
+        </p>
+        <div class="facts reveal in">
+          <div class="fact"><span class="k">Degree</span><span class="v">B.E. Civil Engineering</span></div>
+          <div class="fact"><span class="k">Standing</span><span class="v">First Division</span></div>
+          <div class="fact"><span class="k">Focus</span><span class="v">Hydrology &amp; Hydraulics · Applied Python &amp; ML</span></div>
+          <div class="fact"><span class="k">Based in</span><span class="v">Kathmandu, Nepal</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="research">
+    <div class="wrap">
+      <p class="eyebrow reveal in">Research &amp; Projects</p>
+      <h2 class="section-title reveal in">Work that turns terrain data into decisions.</h2>
+
+      <article class="card reveal in">
+        <div class="card-top">
+          <span class="tag tag-live">Under review · Georisk</span>
+          <span class="tag tag-role">First author</span>
+        </div>
+        <h3>Multi-Scale Pixel and Slope-Unit Landslide Susceptibility Mapping with Applicability-Domain Validation</h3>
+        <p class="venue">Georisk (Taylor &amp; Francis) · Karnali Highway corridor (~2,155 km²), western Nepal</p>
+        <p class="summary">
+          Landslides along Himalayan road corridors cause repeated loss of life and long disruptions to access, yet most
+          susceptibility maps never say how far their predictions can be trusted away from the training data. This study maps
+          susceptibility for the Karnali Highway and pairs the map with an explicit <strong>reliability layer</strong> — a
+          spatial guide to where the model should, and should not, drive engineering decisions.
+        </p>
+        <div style="display:flex; flex-direction:column; align-items:flex-start; gap:6px; margin-bottom:22px;">
+          <a class="preprint-link" style="margin:0;" href="https://doi.org/10.31223/X5C21W" target="_blank" rel="noopener">
+            Read the preprint (EarthArXiv) → doi.org/10.31223/X5C21W
+          </a>
+          <a class="preprint-link" style="margin:0;" href="https://github.com/ayushkarkiofficial-lgtm/Landslide_Susceptibility_Mapping" target="_blank" rel="noopener">
+            View the code on GitHub → github.com/ayushkarkiofficial-lgtm/Landslide_Susceptibility_Mapping
+          </a>
+        </div>
+        <p class="method-label">Methods &amp; technical contribution</p>
+        <ul class="method">
+          <li><strong>Feature engineering:</strong> built nine topography, hydrology, land-cover and road-proximity conditioning factors, with raster workflows for NDVI/NDWI, resampling, masking, raster-stack preparation and prediction-map export (rasterio, GeoPandas, NumPy).</li>
+          <li><strong>Multi-scale design:</strong> compared pixel and slope-unit mapping units across moving-window scales of 3×3, 15×15 and 25×25 cells on a 12.5 m DEM.</li>
+          <li><strong>Modelling:</strong> trained and tuned Random Forest, RBF-SVM and XGBoost with Bayesian search, Platt-scaled probability calibration, and an equal-weight mean-probability ensemble (scikit-learn).</li>
+          <li><strong>Honest validation:</strong> used spatially blocked cross-validation with 1,000 m blocks to strip out spatial-autocorrelation optimism, then reported ROC/AUC, confusion matrices and SHAP feature-importance analysis.</li>
+          <li><strong>The reliability layer:</strong> built a Mahalanobis-distance applicability-domain mask that flags where predictions extrapolate beyond the training feature space, published as a trusted / untrusted binary.</li>
+          <li><strong>Deep learning:</strong> prototyped CNN workflows with Optuna-based tuning for patch-based hazard modelling (PyTorch).</li>
+        </ul>
+      </article>
+
+      <article class="card reveal in">
+        <div class="card-top">
+          <span class="tag tag-live">Complete</span>
+          <span class="tag tag-role">Personal project</span>
+        </div>
+        <h3>A Reliability-Aware ML Surrogate for EPA-SWMM Stormwater Simulation</h3>
+        <p class="venue">Personal research project · EPA-SWMM · Python (pyswmm · swmmio · scikit-learn / XGBoost)</p>
+        <p class="summary">
+          Physics-based stormwater models such as EPA-SWMM are the standard for urban-drainage and overflow planning, yet
+          they are far too slow to run the thousands of times that uncertainty analysis, real-time control or city-scale
+          screening demand. As a personal project, I explored whether a <strong>machine-learning surrogate</strong> could
+          reproduce SWMM's key outputs much faster, and paired it with the same
+          <strong>applicability-domain reliability layer</strong> from my landslide work, so the surrogate flags when it is
+          extrapolating rather than returning a silent, out-of-distribution guess.
+        </p>
+        <a class="preprint-link" href="https://github.com/ayushkarkiofficial-lgtm/SWMM_surrogate_modeling" target="_blank" rel="noopener">
+          View the code on GitHub → github.com/ayushkarkiofficial-lgtm/SWMM_surrogate_modeling
+        </a>
+        <p class="method-label">Methods &amp; results</p>
+        <ul class="method">
+          <li><strong>Training data:</strong> Latin-Hypercube sampling across rainfall depth, imperviousness, slope, conduit capacity, roughness and infiltration drove hundreds of headless SWMM runs (pyswmm + swmmio) into a dense parameter-to-response dataset.</li>
+          <li><strong>Surrogate accuracy:</strong> Random Forest and XGBoost surrogates reproduce peak discharge at <strong>R² ≈ 0.98</strong>, classify flood occurrence at <strong>ROC-AUC ≈ 0.99</strong>, and predict flood volume at <strong>R² ≈ 0.92</strong> on cross-validated and parameter-extrapolation hold-outs.</li>
+          <li><strong>Speed-up in action:</strong> with the trained surrogate I ran a <strong>50,000-sample Monte-Carlo</strong> uncertainty analysis of flood risk — a sweep that is impractical at SWMM's native runtime.</li>
+          <li><strong>The reliability layer:</strong> a Mahalanobis-distance applicability-domain gate flags out-of-distribution inputs; surrogate error rises exactly where the gate fires, so the fast model defers when it should not be trusted.</li>
+          <li><strong>Adaptive sampling:</strong> AD-guided adaptive sampling targets under-covered regions of the input space, benchmarked against random augmentation.</li>
+        </ul>
+      </article>
+
+      <article class="card reveal in">
+        <div class="card-top">
+          <span class="tag tag-live">Ongoing</span>
+          <span class="tag tag-role">Personal project</span>
+        </div>
+        <h3>Physically-Based Rainfall-Runoff Modelling with Metaheuristic Calibration</h3>
+        <p class="venue">Personal research project · GR4J · CAMELS-AUS · Python (NumPy · pandas)</p>
+        <p class="summary">
+          Conceptual rainfall-runoff models turn daily rainfall and evaporation into streamflow, and they are the workhorses of
+          water-resource planning in data-sparse basins. I built the <strong>GR4J</strong> model directly from its governing
+          equations and calibrated it with a <strong>particle-swarm optimizer I wrote from scratch</strong>, deliberately
+          choosing a snow-free, monsoon-analogue catchment as a stand-in for Nepali conditions. The work is ongoing: I am
+          extending it to stronger optimizers and to formal model-transferability testing.
+        </p>
+        <p class="method-label">Methods &amp; progress</p>
+        <ul class="method">
+          <li><strong>Model from first principles:</strong> implemented the GR4J production and routing stores and the S-curve unit hydrographs directly from the governing equations (Perrin et al., 2003) in NumPy and pandas.</li>
+          <li><strong>Clean data pipeline:</strong> turned raw CAMELS-AUS v2 records into a paired daily series of precipitation, PET and streamflow, with FAO-56 Hargreaves PET from tmax/tmin and catchment latitude, no-data handling and a long-term water-balance check.</li>
+          <li><strong>Calibration by particle swarm:</strong> coded PSO from scratch to fit the four GR4J parameters with a two-year warm-up, guarding the search against non-physical parameter sets.</li>
+          <li><strong>Honest evaluation:</strong> scored with NSE, KGE (with its r, α and β decomposition) and PBIAS, reaching <strong>KGE ≈ 0.88</strong> and <strong>NSE ≈ 0.76</strong> with <strong>PBIAS under 1%</strong> on a first basin.</li>
+          <li><strong>Next:</strong> benchmarking further optimizers (immune / improved PSO and others) and testing transferability with the Klemeš split-sample and differential split-sample tests across multiple basins.</li>
+        </ul>
+      </article>
+    </div>
+  </section>
+
+  <section id="thesis">
+    <div class="wrap">
+      <p class="eyebrow reveal in">Final-Year Thesis</p>
+      <div class="about-grid">
+        <div class="reveal in">
+          <h2 class="section-title" style="margin-bottom:18px;">
+            <a class="thesis-title-link" href="Manohara_Irrigation_Prefeasibility_Report.pdf" target="_blank" rel="noopener" title="Open the full report (PDF)">
+              Pre-Feasibility Study of the Manohara Irrigation Project<span class="pdf-tag">Open PDF ↗</span>
+            </a>
+          </h2>
+          <p class="about-lead" style="font-size:1.05rem;">
+            A full pre-feasibility workup for an irrigation scheme, completed as our final-year group project: we analysed DHM
+            hydro-meteorological records to derive monthly flows, irrigation water demand and the 100-year flood discharge, then
+            carried the hydrology through to the hydraulic design of the intake, canal, settling basin and distribution structures
+            using HEC-RAS and QGIS.
+          </p>
+        </div>
+        <div class="facts reveal in">
+          <div class="fact"><span class="k">Domain</span><span class="v">Water resources &amp; hydraulics</span></div>
+          <div class="fact"><span class="k">Hydrology</span><span class="v">Monthly flows · demand · 100-yr flood</span></div>
+          <div class="fact"><span class="k">Tools</span><span class="v">HEC-RAS · QGIS · DHM data</span></div>
+          <div class="fact"><span class="k">Deliverable</span><span class="v">Intake, canal, settling basin, distribution design</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills">
+    <div class="wrap">
+      <p class="eyebrow reveal in">Capabilities</p>
+      <h2 class="section-title reveal in">Every tool here has done real work.</h2>
+
+      <div class="skill-group reveal in">
+        <p class="grp">Geospatial &amp; Remote Sensing</p>
+        <div class="skill-list">
+          <div class="skill-row"><span class="name">QGIS</span><span class="desc">Primary GIS for terrain analysis, map production and the full landslide-mapping workflow.</span></div>
+          <div class="skill-row"><span class="name">ArcGIS</span><span class="desc">Spatial data preparation, geoprocessing and cartographic output.</span></div>
+          <div class="skill-row"><span class="name">rasterio · GeoPandas</span><span class="desc">Python raster/vector pipelines: NDVI/NDWI, resampling, masking, raster-stack assembly, prediction-map export.</span></div>
+          <div class="skill-row"><span class="name">DEM / terrain analysis</span><span class="desc">Slope, aspect, topographic wetness index and multi-scale moving-window features on 12.5 m DEMs.</span></div>
+          <div class="skill-row"><span class="name">SNAP</span><span class="desc">Satellite imagery processing for remote-sensing inputs.</span></div>
+          <div class="skill-row"><span class="name">PostGIS</span><span class="desc">Spatial queries and storage of vector datasets in PostgreSQL.</span></div>
+        </div>
+      </div>
+
+      <div class="skill-group reveal in">
+        <p class="grp">Machine Learning</p>
+        <div class="skill-list">
+          <div class="skill-row"><span class="name">scikit-learn</span><span class="desc">Random Forest, SVM and the full training/evaluation stack — pipelines, metrics, cross-validation.</span></div>
+          <div class="skill-row"><span class="name">XGBoost</span><span class="desc">Gradient-boosted models; strongest performer in the landslide ensemble.</span></div>
+          <div class="skill-row"><span class="name">Bayesian tuning · Optuna</span><span class="desc">Hyperparameter search for classical and deep-learning models.</span></div>
+          <div class="skill-row"><span class="name">Probability calibration</span><span class="desc">Platt scaling and calibrated probabilities so model scores mean something.</span></div>
+          <div class="skill-row"><span class="name">Spatial cross-validation</span><span class="desc">Spatially blocked CV to remove autocorrelation optimism from reported skill.</span></div>
+          <div class="skill-row"><span class="name">SHAP</span><span class="desc">Model interpretation and feature-importance analysis.</span></div>
+          <div class="skill-row"><span class="name">Applicability domain</span><span class="desc">Mahalanobis-distance masks to flag out-of-distribution predictions.</span></div>
+          <div class="skill-row"><span class="name">PyTorch</span><span class="desc">CNN prototypes for patch-based raster hazard modelling.</span></div>
+        </div>
+      </div>
+
+      <div class="skill-group reveal in">
+        <p class="grp">Hydrology &amp; Water Resources</p>
+        <div class="skill-list">
+          <div class="skill-row"><span class="name">HEC-RAS</span><span class="desc">Hydraulic modelling and flood analysis for river and canal design.</span></div>
+          <div class="skill-row"><span class="name">Flood-frequency analysis</span><span class="desc">Return-period discharge estimation, including the 100-year flood.</span></div>
+          <div class="skill-row"><span class="name">Hydrologic modelling</span><span class="desc">Monthly-flow and water-availability analysis from DHM records.</span></div>
+          <div class="skill-row"><span class="name">EPANET</span><span class="desc">Pressurised water-distribution network modelling.</span></div>
+          <div class="skill-row"><span class="name">CROPWAT · Hydrognomon</span><span class="desc">Irrigation water demand and hydrological time-series processing.</span></div>
+        </div>
+      </div>
+
+      <div class="skill-group reveal in">
+        <p class="grp">Programming &amp; Scientific Computing</p>
+        <div class="skill-list">
+          <div class="skill-row"><span class="name">Python</span><span class="desc">Primary language — NumPy, pandas, Matplotlib across every modelling and geospatial task.</span></div>
+          <div class="skill-row"><span class="name">C</span><span class="desc">Foundational programming and algorithmic work.</span></div>
+          <div class="skill-row"><span class="name">LaTeX</span><span class="desc">Scientific writing and manuscript preparation.</span></div>
+          <div class="skill-row"><span class="name">HTML · CSS · JavaScript</span><span class="desc">Front-end basics — including this site.</span></div>
+        </div>
+      </div>
+
+      <div class="skill-group reveal in">
+        <p class="grp">Civil, Structural &amp; CAD</p>
+        <div class="skill-list">
+          <div class="skill-row"><span class="name">AutoCAD · Civil 3D</span><span class="desc">Drafting and civil site/corridor design.</span></div>
+          <div class="skill-row"><span class="name">ETABS · SAFE</span><span class="desc">Structural and foundation analysis and design.</span></div>
+          <div class="skill-row"><span class="name">MS Project · MS Office</span><span class="desc">Project scheduling, documentation and reporting.</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="education">
+    <div class="wrap">
+      <p class="eyebrow reveal in">Education</p>
+      <div class="edu reveal in">
+        <div class="when">2019 — 2024</div>
+        <div>
+          <h3>B.E. in Civil Engineering</h3>
+          <p class="inst">Pulchowk Campus, Institute of Engineering, Tribhuvan University, Nepal · First Division.</p>
+          <div class="coursework">
+            <span class="chip">Hydrology</span>
+            <span class="chip">Water Resources Engineering</span>
+            <span class="chip">Hydraulics</span>
+            <span class="chip">Fluid Mechanics</span>
+            <span class="chip">GIS &amp; Remote Sensing</span>
+            <span class="chip">Numerical Methods</span>
+            <span class="chip">Probability &amp; Statistics</span>
+            <span class="chip">Engineering Design</span>
+            <span class="chip">Surveying</span>
+          </div>
+          <a class="show-all" href="curriculum.html">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="8" y1="6" x2="21" y2="6"></line><line x1="8" y1="12" x2="21" y2="12"></line><line x1="8" y1="18" x2="21" y2="18"></line><line x1="3" y1="6" x2="3.01" y2="6"></line><line x1="3" y1="12" x2="3.01" y2="12"></line><line x1="3" y1="18" x2="3.01" y2="18"></line></svg>
+            Show all courses · full curriculum →
+          </a>
+        </div>
+      </div>
+      <div class="edu reveal in">
+        <div class="when">2017 — 2019</div>
+        <div>
+          <h3>Higher Secondary (10+2, Science)</h3>
+          <p class="inst">Himalayan WhiteHouse International College, Kathmandu, Nepal · CGPA 3.61 / 4.0.</p>
+          <div class="coursework">
+            <span class="chip">Physics</span>
+            <span class="chip">Chemistry</span>
+            <span class="chip">Mathematics</span>
+            <span class="chip">Computer Science</span>
+          </div>
+        </div>
+      </div>
+      <div class="edu reveal in">
+        <div class="when">2007 — 2017</div>
+        <div>
+          <h3>School · SEE</h3>
+          <p class="inst">Lahan Merry Children School, Lahan, Siraha, Nepal · SEE GPA 3.55 / 4.0.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="wrap">
+      <p class="eyebrow reveal in">Get in touch</p>
+      <div class="contact-flex reveal in">
+        <a class="contact-big" href="mailto:ayushkarki.official@gmail.com">ayushkarki.official@gmail.com</a>
+        <div class="contact-meta">
+          <div>Kathmandu, Nepal</div>
+          <div><a href="https://wa.me/9779813959904" target="_blank" rel="noopener">Phone / WhatsApp: +977 9813959904</a></div>
+          <div><a href="https://www.linkedin.com/in/ayush-karki-bb1518255/" target="_blank" rel="noopener">LinkedIn ↗</a></div>
+          <div><a href="Ayush_Karki_Academic_CV.pdf" target="_blank" rel="noopener">Academic CV (PDF) ↓</a></div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap foot-inner">
+    <p>© 2026 Ayush Karki</p>
+  </div>
+</footer>
+
+<script>
+  // theme toggle
+  const root = document.documentElement;
+  const themeBtn = document.getElementById('themeToggle');
+  function syncThemeLabel() {
+    themeBtn.textContent = root.getAttribute('data-theme') === 'dark' ? '☀ Light' : '☾ Dark';
+  }
+  syncThemeLabel();
+  themeBtn.addEventListener('click', () => {
+    const next = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+    root.setAttribute('data-theme', next);
+    try { localStorage.setItem('theme', next); } catch (e) {}
+    syncThemeLabel();
+  });
+
+  // nav border on scroll
+  const nav = document.getElementById('nav');
+  const onScroll = () => nav.classList.toggle('scrolled', window.scrollY > 8);
+  onScroll();
+  window.addEventListener('scroll', onScroll, { passive: true });
+
+  // scroll reveal
+  const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const reveals = document.querySelectorAll('.reveal');
+  if (reduce || !('IntersectionObserver' in window)) {
+    reveals.forEach(el => el.classList.add('in'));
+  } else {
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+    }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
+    reveals.forEach(el => io.observe(el));
+    document.querySelectorAll('.hero .reveal').forEach(el => el.classList.add('in'));
+  }
+</script>
+
+
+<div style="background-color: transparent; border: 0px; padding: 0px; margin: 0px; position: fixed;"></div><div id="GOOGLE_INPUT_CHEXT_FLAG" style="display: none;" input="" input_stat="{&quot;tlang&quot;:true,&quot;tsbc&quot;:true,&quot;pun&quot;:true,&quot;mk&quot;:true,&quot;ss&quot;:true}"></div></body><chatgpt-sidebar data-rendered="true" data-gpts-theme="light"></chatgpt-sidebar><grammarly-desktop-integration data-grammarly-shadow-root="true" style="visibility: visible !important;"></grammarly-desktop-integration></html>
