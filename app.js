@@ -124,22 +124,31 @@ var ICONS = {
 
 /* Profile links. Each renders only if its URL is filled in above in data.js. */
 var SOCIAL = [
-  { net: "github",   label: "GitHub",   url: ME.github,   note: "Code, Arduino sketches and analysis scripts" },
-  { net: "linkedin", label: "LinkedIn", url: ME.linkedin, note: "Career history, in full" },
-  { net: "orcid",    label: "ORCID iD", url: ME.orcid,    note: "Permanent author record" }
+  { net: "github",   label: "",   url: ME.github},
+  { net: "linkedin", label: "", url: ME.linkedin},
+  { net: "orcid",    label: "", url: ME.orcid}
 ].filter(function(x){ return has(x.url); });
-
-function socialRow(){
+function socialRow() {
   if (!SOCIAL.length) return "";
-  return '<div class="cta-social">' + SOCIAL.map(function(x){
-    var shown = x.url.replace(/^https?:\/\/(www\.)?/, "").replace(/\/$/, "");
-    return '<a class="soc" data-net="' + x.net + '" href="' + esc(x.url) + '"'
-      + ' target="_blank" rel="noopener" title="' + esc(shown) + '">'
-      + '<span class="soc-i">' + ICONS[x.net] + '</span>'
-      + '<span class="soc-t"><b>' + esc(x.label) + '</b><span>' + esc(x.note) + '</span></span>'
-      + '<span class="soc-go" aria-hidden="true">↗</span></a>';
-  }).join("") + "</div>";
+
+  return '<div class="cta-social">' + SOCIAL.map(function(x) {
+    return '<a class="soc" data-net="' + x.net + '" href="' + esc(x.url) + '" ' +
+      'target="_blank" rel="noopener" aria-label="' + x.net + '">' +
+      '<span class="soc-i">' + ICONS[x.net] + '</span>' +
+      '</a>';
+  }).join("") + '</div>';
 }
+// function socialRow(){
+//   if (!SOCIAL.length) return "";
+//   return '<div class="cta-social">' + SOCIAL.map(function(x){
+//     var shown = x.url.replace(/^https?:\/\/(www\.)?/, "").replace(/\/$/, "");
+//     return '<a class="soc" data-net="' + x.net + '" href="' + esc(x.url) + '"'
+//       + ' target="_blank" rel="noopener" title="' + esc(shown) + '">'
+//       + '<span class="soc-i">' + ICONS[x.net] + '</span>'
+//       + '<span class="soc-t"><b>' + esc(x.label) + '</b><span>' + esc(x.note) + '</span></span>'
+//       + '<span class="soc-go" aria-hidden="true">↗</span></a>';
+//   }).join("") + "</div>";
+// }
 
 var mailSubject = "Research enquiry — " + displayName;
 var mailBody = "Hello " + displayName.split(/\s+/)[0] + ",\n\n";

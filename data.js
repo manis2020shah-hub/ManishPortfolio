@@ -17,7 +17,7 @@ var ME = {
   role:     "Physics graduate · green hydrogen electrolysis and green-synthesised nanomaterials · Researcher at Innovation Ghar Nepal",
   status:   "Seeking a funded MSc / PhD research assistantship · Autumn 2027",
   location: "Lalitpur, Nepal",
-  photo:    "",          // image URL, or a data: URI for the offline file
+  photo:    "photo.png",  // sits next to index.html; swap for a URL if you host it
   email:    "manish2020shah@gmail.com",
   phone:    "+977 9861360228",
   github:   "https://github.com/manis2020shah-hub",
