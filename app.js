@@ -125,11 +125,13 @@ $("works").innerHTML = WORKS.map(function(w){
     + "<div>" + links + "</div>"
     
     + findings
-    + '<div class="card-grid">'
-      + '<div><p class="method-label">My contribution</p><p class="card-note">'
-        + f(w.contribution, "one or two sentences — what was yours, specifically") + "</p></div>"
-      
-    + "</div></article>";
+    + ("contribution" in w
+      ? '<div class="card-grid">'
+        + '<div><p class="method-label">My contribution</p><p class="card-note">'
+          + f(w.contribution, "one or two sentences — what was yours, specifically") + "</p></div>"
+        + "</div>"
+      : "")
+    + "</article>";
 }).join("");
 
 $("minis").innerHTML = MINIS.map(function(m){

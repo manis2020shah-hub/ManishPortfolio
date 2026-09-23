@@ -17,7 +17,7 @@ var ME = {
   field:    "Green Hydrogen & Nanomaterials",   // shown in the browser tab
   coords:   "27.6674° N · 85.3086° E — Lalitpur, Nepal",
   pitch:    "I build the cell, isolate one variable, and report what the instrument actually showed — *water electrolysis*, *green-synthesised nanomaterials*, and the sensors that measure them.",
-  role:     "Physics graduate · green hydrogen electrolysis and green-synthesised nanomaterials · Researcher at Innovation Ghar Nepal",
+  role:     "Physics graduate · Research Assistant at Innovation Ghar Nepal. green hydrogen electrolysis and green-synthesised nanomaterials",
   status:   "Seeking a funded MSc / PhD research assistantship · Spring / Fall 2027",
   location: "Lalitpur, Nepal",
   photo:    "photo.png",  // sits next to index.html; swap for a URL if you host it
@@ -26,14 +26,14 @@ var ME = {
   github:   "https://github.com/manis2020shah-hub",
   linkedin: "https://www.linkedin.com/in/manish-shah-14b238438/",
   orcid:    "https://orcid.org/0009-0008-4432-6746",
-  cv:       "https://drive.google.com/file/d/1vfIyBbURH8cEyYuD21wc7udu_YrPMqjG/view?usp=sharing"           // link to your CV PDF once it is online
+  // cv:       "https://drive.google.com/file/d/1vfIyBbURH8cEyYuD21wc7udu_YrPMqjG/view?usp=sharing"           // link to your CV PDF once it is online
+  cv: "/Manish_Shah_Academic_CV.pdf"
 };
 
 /* The Profile section. One string per paragraph; *stars* italicise, **doubles** bold. */
 var PROFILE = [
-  "I am a physics graduate working at the experimental end of energy materials, and a researcher at **Innovation Ghar Nepal** since February 2023. My work runs from **green hydrogen production by water electrolysis**, through **green synthesis of copper nanoparticles from waste materials**, to **graphene synthesis and gas-sensor fabrication**.",
-  "The common thread is the measurement itself: building the cell or the sensor, isolating one variable, and reporting what the instrument actually showed. A physics training is what makes that transferable — the electrochemistry, the nanomaterials and the sensing are different subjects, but they are the same discipline of controlled measurement.",
-  "Alongside the bench work I model and draw what I build — AutoCAD, SOLIDWORKS and CATIA — and I instrument it with Arduino data loggers I write myself. I am looking for a group where that combination is useful: electrolyzer and electrocatalysis work first, oxide nanomaterials second."
+  "I am a physics graduate working at the experimental end of energy materials, and a research assistant at **Innovation Ghar Nepal** since February 2023. My work runs from **green hydrogen production by water electrolysis**, through **green synthesis of copper nanoparticles from waste materials**, to **graphene synthesis and gas-sensor fabrication**.",
+  "The common thread is the measurement itself: building the cell or the sensor, isolating one variable, and reporting what the instrument actually showed. A physics training is what makes that transferable — the electrochemistry, the nanomaterials and the sensing are different subjects, but they are the same discipline of controlled measurement."
 ];
 
 /* The short fact column beside the profile. */
@@ -58,7 +58,6 @@ var WORKS = [
       // "Thermal evaluation of the power-generation stage",
       // "Renewable-energy integration"
     ],
-    contribution: "Mine end to end: I built both cells, ran every condition — electrode spacing, NaCl concentration, applied voltage and electrode alignment — measured the evolved hydrogen volume at each, and wrote the report.",
     bench: [
       { v: "Two- and three-electrode", l: "Cell configuration" },
       { v: "1–3 mm", l: "Electrode spacing" },
@@ -82,14 +81,6 @@ var WORKS = [
       // "Degradation assay on 10 mg/L rifampicin, tracked as the fall in absorbance at λmax = 480 nm and converted to percentage degradation",
       // "Thermodynamics from a Van ’t Hoff plot (ΔH, ΔS) and activation energy from an Arrhenius plot"
     ],
-    findings: [
-      "The particles degrade rifampicin **fast and almost completely** — **99.42% within 12 minutes** at 10 mg/L.",
-      "**Load matters:** raising rifampicin from 10 to 30 mg/L dropped degradation to 97.78%, consistent with the active sites on the particle surface saturating.",
-      "**pH cuts both ways:** degradation was 93.84% at the solution’s native pH 5, but rose in both directions — 98.09% at pH 2 and 98.46% at pH 12 — because both media favour the radical species that do the work.",
-      "**Warmer is better:** 25 °C to 65 °C took degradation from 97.19% to 98.76%, as faster Brownian motion improves the kinetics.",
-      "UV–vis puts the absorption peak at **221 nm**, the optical signature of the synthesised copper nanoparticles."
-    ],
-    contribution: "First and corresponding author, on a two-author paper with Saddam Hussain Dhobi. The extract preparation, the synthesis, the full degradation series and the manuscript are mine.",
     bench: [
       { v: "Garlic husk, 1 mg/mL", l: "Reducing agent" },
       { v: "0.1 M CuSO₄", l: "Precursor" },
@@ -113,14 +104,6 @@ var WORKS = [
       // "Multidrug resistance scored by the ECDC/CDC definition — non-susceptibility to at least one agent in three or more antimicrobial categories",
       // "Daily quality control of incubator, autoclave and media sterility; descriptive analysis in Excel"
     ],
-    findings: [
-      "***K. pneumoniae*** was the commonest isolate at **29.51%**, ahead of *E. coli* (22.53%), *P. aeruginosa* (21.12%) and *Acinetobacter* spp. (9.85%); Gram-negative bacilli accounted for **90.14%** of all isolates.",
-      "**Colistin held full activity** against the Gram-negative isolates (100% susceptible), with polymyxin B at 95% and amikacin at 86% — while ampicillin failed outright (100% resistant) and *K. pneumoniae* was 95.24% resistant to ciprofloxacin.",
-      "**42.25% of isolates were multidrug-resistant**, rising to 46.88% within the Gram-negative group; *E. coli* carried the highest species-specific rate at 43.34%.",
-      "Half the *S. aureus* isolates were MDR, yet vancomycin, linezolid, teicoplanin, chloramphenicol and gentamicin remained fully active against them.",
-      "The prescribing conclusion: **empirical ampicillin and ciprofloxacin can no longer be justified** at this centre, which is the argument for a formal stewardship programme and routine local antibiograms."
-    ],
-    contribution: "First author. With Anand Singh I identified the research problem, designed the methodology, generated the data and wrote the original draft; Saddam Hussain Dhobi supervised the work, validated the results and reviewed the manuscript.",
     bench: [
       { v: "475", l: "Sputum samples" },
       { v: "71 (14.94%)", l: "Culture-positive" },
@@ -166,7 +149,7 @@ var MINIS = [
 ];
 
 var JOBS = [
-  { years: "Feb 2023 — present", role: "Researcher", org: "Innovation Ghar Nepal, Lalitpur",
+  { years: "Feb 2023 — present", role: "Research Assistant", org: "Innovation Ghar Nepal, Lalitpur",
     detail: "Data handling and analysis; preparing research proposals; preparing articles for publication." },
   { years: "Nov 2021 — Feb 2022", role: "Data Entry", org: "Central Bureau of Statistics, Nepal",
     detail: "Transferring survey data from paper to database, maintaining data accuracy, and following collection protocols." },
@@ -178,18 +161,13 @@ var SKILLS = [
   { group: "Experimental & fabrication", items: [
     { name: "Three-electrode electrolysis cell", note: "Built and operated for the green-hydrogen study." },
     { name: "Green nanoparticle synthesis", note: "Copper recovered from waste materials and prepared as nanoparticles." },
-    { name: "Graphene synthesis and gas-sensor fabrication", note: "Including sensitivity analysis across sensor parameters." },
-    { name: "Arduino data loggers", note: "Built and programmed for instrument readout." }
-  ]},
-  { group: "Modelling & CAD", items: [
-    { name: "AutoCAD", note: "Working drawings." },
-    { name: "SOLIDWORKS", note: "Biogas systems, gears and machine parts." },
-    { name: "CATIA", note: "Turbine blade and hub modelling." }
+    { name: "Graphene synthesis and gas-sensor fabrication", note: "Including sensitivity analysis across sensor parameters." }
   ]},
   { group: "Computing", items: [
-    { name: "Arduino (C/C++)", note: "Instrument control and logging." },
     { name: "C and QBASIC", note: "Programming fundamentals." },
     { name: "Python", note: "Workshop on Python for supercomputing." },
+    { name: "R", note: "Statistical analysis." },
+    { name: "Origin Pro", note: "Data analysis and plotting." },
     { name: "Deep learning in physics", note: "15-day training — applied, not yet published." }
   ]},
   { group: "Research communication", items: [
